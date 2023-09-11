@@ -45,22 +45,36 @@ const getPerson = async (req, res) => {
 
 const updatePerson = async (req, res) => {
   try {
+    // Validate that all fields in req.body are strings
+    const isAllFieldsString = Object.values(req.body).every(
+      (value) => typeof value === "string"
+    );
+
+    if (!isAllFieldsString) {
+      return res.status(400).json({
+        success: false,
+        message: "All fields in the request body must be strings",
+      });
+    }
+
     const update = await Person.findByIdAndUpdate(
       req.params.user_id,
-      req.body,
+      req.body, // Use the entire JSON object as the update
       {
         new: true,
       }
     );
+
     if (!update) {
       return res.status(400).json({
         success: false,
         message: "Failed to update Person",
       });
     }
+
     res
       .status(200)
-      .json({ success: true, message: "Person successfully update", update });
+      .json({ success: true, message: "Person successfully updated", update });
   } catch (error) {
     res.status(500).json(error);
   }
