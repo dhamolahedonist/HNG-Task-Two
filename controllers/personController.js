@@ -3,6 +3,12 @@ const Person = require("../models/personModel");
 const createPerson = async (req, res) => {
   try {
     const { name } = req.body;
+    if (!name) {
+      return res.status(400).json({
+        success: false,
+        message: "Name must be provided",
+      });
+    }
     if (typeof name !== "string") {
       return res.status(400).json({
         success: false,
