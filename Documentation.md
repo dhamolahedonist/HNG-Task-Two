@@ -1,7 +1,7 @@
-###Controllers Documentation
+Controllers Documentation
 This document provides detailed information about the controllers used in the project. Controllers are responsible for handling HTTP requests and controlling the flow of data between the routes and the models.
 
-###Table of Contents
+Table of Contents
 
 1. Create Person
 2. Get Person
@@ -10,14 +10,14 @@ This document provides detailed information about the controllers used in the pr
 
 > > > > > > > > > > > > > > > > > > > > > > >
 
-###Create Person
-Endpoint: `/api`
-HTTP Method: `POST`
+1. Create Person
+   Endpoint: `/api`
+   HTTP Method: `POST`
 
-####Description:
+Description:
 This controller is responsible for creating a new person entry in the database.
 
-####Request Body:
+Request Body:
 
 - `name` (String): The name of the person to be created.
   Request Example:
@@ -28,13 +28,13 @@ This controller is responsible for creating a new person entry in the database.
 }
 ```
 
-####Response:
+Response:
 
 - `success` (Boolean): Indicates the success of the operation.
 - `message` (String): Describes the result of the operation.
 - `data` (Object): Contains the created person object.
 
-####Response Example (Success):
+Response Example (Success):
 
 ```javascript
 {
@@ -48,7 +48,7 @@ This controller is responsible for creating a new person entry in the database.
 }
 ```
 
-####Response Example (Error):
+Response Example (Error):
 
 ```javascript
 {
@@ -57,23 +57,22 @@ This controller is responsible for creating a new person entry in the database.
 }
 ```
 
-###Get Person
-Endpoint: `/api/:user_id`
-HTTP Method: `GET`
+2. Get Person
+   Endpoint: `/api/:user_id`
+   HTTP Method: `GET`
 
-####Description:
+Description:
 This controller is responsible for retrieving a person's information by their unique user_id.
 
-####Request Parameters:
+Request Parameters:
 
 - `user_id` (String): The unique identifier of the person to be retrieved.
-
-####Response:
+  Response:
 
 - Person object if found.
 - Error message if not found.
 
-####Response Example (Success):
+Response Example (Success):
 
 ```javascript
 {
@@ -83,7 +82,7 @@ This controller is responsible for retrieving a person's information by their un
 }
 ```
 
-####Response Example (Error):
+Response Example (Error):
 
 ```javascript
 {
@@ -91,22 +90,22 @@ This controller is responsible for retrieving a person's information by their un
 }
 ```
 
-###Update Person
-Endpoint: `/api/:user_id`
-HTTP Method: `PUT`
+3. Update Person
+   Endpoint: `/api/:user_id`
+   HTTP Method: `PUT`
 
-####Description:
+Description:
 This controller is responsible for updating a person's information by their unique user_id.
 
-####Request Parameters:
+Request Parameters:
 
 - `user_id` (String): The unique identifier of the person to be updated.
 
-####Request Body:
+Request Body:
 
 - Any field(s) of the person object that need to be updated.
 
-####Request Example:
+Request Example:
 
 ```javascript
 {
@@ -116,7 +115,7 @@ This controller is responsible for updating a person's information by their uniq
 }
 ```
 
-####Response:
+Response:
 
 - `success` (Boolean): Indicates the success of the operation.
 - `message` (String): Describes the result of the operation.
@@ -136,7 +135,7 @@ This controller is responsible for updating a person's information by their uniq
 }
 ```
 
-####Response Example (Error):
+Response Example (Error):
 
 ```javascript
 {
@@ -145,23 +144,23 @@ This controller is responsible for updating a person's information by their uniq
 }
 ```
 
-###Delete Person
-Endpoint: `/api/:user_id`
-HTTP Method: `DELETE`
+4. Delete Person
+   Endpoint: `/api/:user_id`
+   HTTP Method: `DELETE`
 
-####Description:
+Description:
 This controller is responsible for deleting a person's information by their unique user_id.
 
-####Request Parameters:
+Request Parameters:
 
 - `user_id` (String): The unique identifier of the person to be deleted.
 
-####Response:
+Response:
 
 - `success` (Boolean): Indicates the success of the operation.
 - `message` (String): Describes the result of the operation.
 
-####Response Example (Success):
+Response Example (Success):
 
 ```javascript
 {
@@ -170,7 +169,7 @@ This controller is responsible for deleting a person's information by their uniq
 }
 ```
 
-####Response Example (Error):
+Response Example (Error):
 
 ```javascript
 {
