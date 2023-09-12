@@ -9,6 +9,7 @@ const createPerson = async (req, res) => {
         message: "Name must be provided",
       });
     }
+
     if (typeof name !== "string") {
       return res.status(400).json({
         success: false,
