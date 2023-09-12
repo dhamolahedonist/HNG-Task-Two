@@ -6,7 +6,9 @@ UML Diagrams
 
 FlowChart
 
-> > > > > > > ![Alt text](image-1.png)
+> > > > > > >
+
+![Alt text](image-1.png)
 
 Controllers Documentation
 This document provides detailed information about the controllers used in the project. Controllers are responsible for handling HTTP requests and controlling the flow of data between the routes and the models.
